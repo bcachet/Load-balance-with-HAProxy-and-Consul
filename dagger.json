@@ -1,0 +1,11 @@
+{
+  "name": "Load-balance-with-HAProxy-and-Consul",
+  "engineVersion": "v0.19.11",
+  "toolchains": [
+    {
+      "name": "golang",
+      "source": "github.com/bcachet/dagger/golang@main",
+      "pin": "dbf64941667be537d29e1b322037a5a1abc74938"
+    }
+  ]
+}

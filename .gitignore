@@ -6,6 +6,14 @@
 !.devcontainer/
 !.devcontainer/devcontainer.json
 
+!.github/
+!.github/workflows/
+!.github/workflows/*.yml
+
+!dagger.json
+
+!mise.toml
+
 !config/
 !config/consul/
 !config/consul/*.json

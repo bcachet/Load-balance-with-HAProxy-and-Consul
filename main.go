@@ -24,12 +24,18 @@ func health(w http.ResponseWriter, req *http.Request) {
 	if atomic.LoadInt32(&shuttingDown) == 1 {
 		fmt.Println("health: Shutdown")
 		w.WriteHeader(http.StatusServiceUnavailable)
-		fmt.Fprintf(w, "Shutdown from %s", hostname)
+		_, err = fmt.Fprintf(w, "Shutdown from %s", hostname)
+		if err != nil {
+			panic("Failed to send shutdown message")
+		}
 		return
 	}
 	fmt.Println("health: Ok")
 	w.WriteHeader(http.StatusOK)
-	fmt.Fprintf(w, "Ok from %s", hostname)
+	_, err = fmt.Fprintf(w, "Ok from %s", hostname)
+	if err != nil {
+		panic("Failed to send Ok message")
+	}
 }
 
 func main() {
