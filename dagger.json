@@ -5,7 +5,7 @@
     {
       "name": "golang",
       "source": "github.com/bcachet/dagger/golang@main",
-      "pin": "dbf64941667be537d29e1b322037a5a1abc74938"
+      "pin": "2ace0593154de1ae22905a9df8e8634ac02facf6"
     }
   ]
 }
