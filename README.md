@@ -27,3 +27,9 @@ We can play with the backend services via
 ```sh
 docker compose {stop,start} backend-{1,2}
 ```
+
+We can put `backend-1` in Consul maintenance to ensure Haproxy does not route traffic to `backend-1` container without having to stop the container through Consul API:
+
+```sh
+curl -s -X PUT "http://localhost:8500/v1/agent/service/maintenance/backend-1?enable=true&reason=draining+for+test"
+```
