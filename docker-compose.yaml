@@ -1,6 +1,6 @@
 services:
     consul-server:
-        image: docker.io/library/consul:1.15.4
+        image: docker.io/hashicorp/consul:1.17.2
         hostname: consul
         volumes:
             - ./config/consul/server.json:/consul/config/server.json:ro
@@ -32,7 +32,7 @@ services:
                 ipv4_address: 10.70.90.202
 
     haproxy:
-        image: docker.io/library/haproxy:3.2-bookworm
+        image: docker.io/library/haproxy:2.4-bookworm
         hostname: haproxy
         user: root
         volumes:
